@@ -50,8 +50,7 @@
     },
     "igwb13ad2d5": {
       "Type": "AWS::EC2::InternetGateway",
-      "Properties": {
-      }
+      "Properties": {}
     },
     "dopt949461f0": {
       "Type": "AWS::EC2::DHCPOptions",
@@ -168,7 +167,7 @@
       "Type": "AWS::AutoScaling::LaunchConfiguration",
       "Properties": {
         "AssociatePublicIpAddress": true,
-        "ImageId": "ami-d0864bb0",
+        "ImageId": "ami-0f5bbfea14ad9f036",
         "InstanceType": "t2.micro",
         "KeyName": "pizza-keys",
         "IamInstanceProfile": "pizza-ec2-role",
@@ -296,8 +295,12 @@
       "Properties": {
         "DBSubnetGroupDescription": "default",
         "SubnetIds": [
-          { "Ref": "subnet0a00807c" },
-          { "Ref": "subnet1e84ed7a" }
+          {
+            "Ref": "subnet0a00807c"
+          },
+          {
+            "Ref": "subnet1e84ed7a"
+          }
         ]
       }
     },
@@ -617,28 +620,28 @@
         }
       }
     },
-    "subnetRouteTableAssociationA" : {
-         "Type" : "AWS::EC2::SubnetRouteTableAssociation",
-         "Properties" : {
-            "SubnetId" : {
-              "Ref" : "subnet0a00807c"
-            },
-            "RouteTableId" : {
-              "Ref" : "rtbb57c56d1"
-            }
-         }
-      },
-      "subnetRouteTableAssociationB" : {
-         "Type" : "AWS::EC2::SubnetRouteTableAssociation",
-         "Properties" : {
-            "SubnetId" : {
-              "Ref" : "subnet1e84ed7a"
-            },
-            "RouteTableId" : {
-              "Ref" : "rtbb57c56d1"
-            }
-         }
-      },
+    "subnetRouteTableAssociationA": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "SubnetId": {
+          "Ref": "subnet0a00807c"
+        },
+        "RouteTableId": {
+          "Ref": "rtbb57c56d1"
+        }
+      }
+    },
+    "subnetRouteTableAssociationB": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "SubnetId": {
+          "Ref": "subnet1e84ed7a"
+        },
+        "RouteTableId": {
+          "Ref": "rtbb57c56d1"
+        }
+      }
+    },
     "gw1": {
       "Type": "AWS::EC2::VPCGatewayAttachment",
       "Properties": {
