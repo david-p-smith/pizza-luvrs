@@ -1,4 +1,4 @@
-const Sequalize = require("sequalize");
+const Sequelize = require("sequelize");
 
 const database = "pizza_luvrs";
 const host = "pizza-db.cua7ozwnfxpl.us-east-1.rds.amazonaws.com";
